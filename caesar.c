@@ -12,7 +12,7 @@ int keylower(int s,int i, int key);
 int main(int argc, string argv[])
 {
     
-    int i, key, tam, ok = inputcheck(argc,argv);;
+    int i, key, tam, ok = inputcheck(argc,argv);
  
 
     if(ok==1) return ok;
