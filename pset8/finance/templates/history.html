@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<table style="width:60%" align="center" class="table">
+    <tr>
+
+        <th>Date</th>
+        <th>Transaction type</th>
+        <th>Symbol</th>
+        <th>Number owned</th>
+        <th>Price</th>
+        <th>Total value</th>
+    </tr>
+    {% for row in transactions_info: %}
+
+        <tr>
+            <td>{{ row.time }}</td>
+            <td>{{ row.transaction_type }}</td>
+            <td>{{ row.symbol }}</td>
+            {% if row.symbol != '----' %}
+            <td>{{ row.noshares | abs }}</td>
+            <td>{{ quote[row.symbol]["price"] | usd }}</td>
+            <td>{{ (quote[row.symbol]["price"]*row.noshares) | abs  | usd }}</td>
+            {% else %}
+            <td> ----</td>
+            <td>{{ row.price }}</td>
+            <td>{{ row.price }}</td>
+            {% endif %}
+        </tr>
+
+    {% endfor %}
+        </table>
+{% endblock %}

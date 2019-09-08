@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+
+<form action="/addfunds" method="post" class="form-inline justify-content-center">
+    <div class="form-group mx-sm-2 mb-2">
+        <label for="inputPassword2" class="sr-only">Funds</label>
+        <input type="text" name="funds" class="form-control" id="inputPassword2" placeholder="Funds">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Add Funds</button>
+</form>
+
+<p></p>
+<table style="width:60%" align="center" class="table">
+    <tr>
+        <th>Symbol</th>
+        <th>Number owned</th>
+        <th>Current price</th>
+        <th>Total value</th>
+    </tr>
+    {% for row in current_stocks: %}
+
+        <tr>
+            {% if row.noshares != 0 %}
+            <td>{{ row.symbol }}</td>
+            <td>{{ row.noshares }}</td>
+            <td>{{ quote[row.symbol]["price"] | usd }}</td>
+            <td>{{ (quote[row.symbol]["price"]*row.noshares) | usd }}</td>
+            {% endif %}
+        </tr>
+
+    {% endfor %}
+        <tr>
+            <td colspan="4"><strong>Total cash:</strong> {{ cash | usd }}</td>
+        </tr>
+        <tr>
+            {% if overall_balance<0 %}
+                <td colspan="4"><strong>Overall balance:</strong> <font color="red">{{ overall_balance |usd }}</td>
+            {% elif overall_balance>0 %}
+                <td colspan="4"><strong>Overall balance:</strong> <font color="blue">{{ overall_balance |usd }}</td>
+            {% else %}
+                <td colspan="4"><strong>Overall balance:</strong> {{ overall_balance |usd }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <td colspan="4"><strong>Cash available::</strong> {{ cash_available | usd }}</td>
+        </tr>
+        </table>
+{% endblock %}
