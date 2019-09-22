@@ -4,7 +4,7 @@ Pset2 - Some extra C with strings
 
 Pset3 - More C with image processing (couldn't recover my resize.c and recover.c unfortunately)
 
-Pset4 - How about some extra C with tries and hash table? (couldn't recover, I am remaking it. If you are a recruiter, could you please check again 22/9/2019 first thing in the morning?)
+Pset4 - Couldn't recover, I need to remake it.
 
 Pset5 - Instead... How about you check my dog's webpage? www.sifthedog.com (I am building it yet
 
