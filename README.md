@@ -4,7 +4,7 @@ Pset2 - Some extra C with strings
 
 Pset3 - More C with image processing
 
-Pset5 - Instead... How about you check my dog's webpage? www.sifthedog.com (I am building it yet
+Pset5 - Instead... How about you check my dog's webpage? www.sifthedog.com (It's my first webpage using only HTML and CSS. Don't be too harsh)
 
 Pset6 - Python files. Remake of some of those C files plus the bleep.py (it censors a word in a phrase)
 
